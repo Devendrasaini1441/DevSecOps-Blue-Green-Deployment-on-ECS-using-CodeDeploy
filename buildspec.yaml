@@ -50,9 +50,8 @@ phases:
       - echo "========== BUILD =========="
       - echo "Logging in to Docker registry"
 
-      - echo "$DOCKER_REGISTRY_PASSWORD" | docker login \
-          -u "$DOCKER_REGISTRY_USERNAME" \
-          --password-stdin "$DOCKER_REGISTRY_URL"
+      # ✅ FIXED: SINGLE-LINE docker login (NO backslashes)
+      - echo "$DOCKER_REGISTRY_PASSWORD" | docker login -u "$DOCKER_REGISTRY_USERNAME" --password-stdin "$DOCKER_REGISTRY_URL"
 
       - echo "Building Docker image"
       - docker build -t "$DOCKER_REGISTRY_URL/$DOCKER_REGISTRY_USERNAME/swiggy:latest" .
@@ -64,7 +63,6 @@ phases:
     commands:
       - echo "========== POST-BUILD =========="
       - echo "Running Trivy image scan"
-
       - trivy image "$DOCKER_REGISTRY_URL/$DOCKER_REGISTRY_USERNAME/swiggy:latest" > trivy-image.txt || true
 
       - echo "Running OWASP Dependency-Check"
