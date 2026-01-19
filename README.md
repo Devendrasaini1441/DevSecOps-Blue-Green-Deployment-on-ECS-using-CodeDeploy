@@ -291,6 +291,18 @@ Trivy image scan completed
 
 
 
+<img width="940" height="441" alt="image" src="https://github.com/user-attachments/assets/fc7e2b07-f919-4f22-80f8-ee5eaed29938" />
+<img width="940" height="450" alt="image" src="https://github.com/user-attachments/assets/fbb39584-f6a2-4e94-ba67-1e1fd06f3139" />
+<img width="940" height="448" alt="image" src="https://github.com/user-attachments/assets/46d81e40-0e97-4869-b9f2-26257d378d9a" />
+<img width="940" height="446" alt="image" src="https://github.com/user-attachments/assets/d27ec344-5796-4acd-819a-0a4a32a9ec21" />
+<img width="940" height="445" alt="image" src="https://github.com/user-attachments/assets/a84e3687-feae-4244-970c-5776dd4c3f97" />
+<img width="940" height="449" alt="image" src="https://github.com/user-attachments/assets/39ba75a7-da4b-43e7-8237-cd1b27267f0a" />
+<img width="940" height="446" alt="image" src="https://github.com/user-attachments/assets/fe67ad68-644b-46d4-a60b-7150e8057875" />
+
+
+
+
+
 
 
 
