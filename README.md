@@ -103,5 +103,127 @@ Username: admin
 Password: admin
 
 
+## Step-2: SonarQube Configuration and Token Setup
+
+After successfully launching the SonarQube server, the next step is to configure SonarQube and generate an authentication token that will be used by AWS CodeBuild to perform static code analysis securely.
+
+
+<img width="940" height="452" alt="image" src="https://github.com/user-attachments/assets/64b9f579-c203-4e30-88d4-dd6b6002a778" />
+
+
+### 1. Change Default Password
+
+Log in to the SonarQube dashboard.
+
+You will be prompted to change the default password.
+
+Set a strong custom password and proceed.
+
+
+<img width="1001" height="515" alt="image" src="https://github.com/user-attachments/assets/44e13af0-825b-4122-a0db-4f1cfcad282b" />
+
+
+### 2. Create a New Project Manually
+
+From the SonarQube dashboard, click on Create Project.
+
+Choose the Manual option (<> icon).
+
+<img width="940" height="452" alt="image" src="https://github.com/user-attachments/assets/2ec27a96-1bdd-4b3e-9ab6-33848b09d5d1" />
+
+### 3. Provide Project Details
+
+Enter a Project Name (for example, Swiggy).
+
+The project key will be generated automatically.
+
+<img width="940" height="476" alt="image" src="https://github.com/user-attachments/assets/63972375-bf90-4271-9ed9-97615772ece9" />
+
+### 4. Select Local Analysis
+
+Select Locally as the project setup method.
+
+<img width="940" height="481" alt="image" src="https://github.com/user-attachments/assets/36e9f5fe-9f39-4052-bd72-d48308a948a4" />
+
+### 5. Complete Project Setup
+
+Click on Set Up to finalize the project configuration.
+
+<img width="940" height="475" alt="image" src="https://github.com/user-attachments/assets/a528c967-b860-44ff-a2c1-1a48a4ce55a2" />
+
+
+### 6. Generate SonarQube Token
+
+Click on Generate to create a new authentication token.
+
+Copy the generated token and store it securely.
+
+<img width="940" height="454" alt="image" src="https://github.com/user-attachments/assets/60b24cbd-e460-4f91-a4eb-834a2b914cdd" />
+
+
+### 7. Select Analysis Configuration
+
+Under the Run analysis section:
+
+Choose Other as the build tool.
+
+Select Linux as the operating system.
+
+Copy the Sonar token shown on the screen.
+
+### 8. Store Secrets in AWS Systems Manager Parameter Store
+
+Open the AWS Console.
+
+Search for Systems Manager.
+
+Navigate to Parameter Store.
+<img width="940" height="450" alt="image" src="https://github.com/user-attachments/assets/1e529181-a1c6-429a-af8f-7e11da2779c2" />
+
+
+### 9. Create a New Parameter
+
+Click on Create parameter.
+
+### 10. Add SonarQube Token
+
+Provide a parameter name for the Sonar token.
+
+Paste the copied Sonar token in the Value field.
+
+Set the type as SecureString.
+<img width="940" height="448" alt="image" src="https://github.com/user-attachments/assets/ec41ee09-c7a7-4850-9810-0d0268f75c02" />
+
+
+⚠️ The parameter name must match the reference used in buildspec.yaml.
+
+### 11. Store Docker Credentials in Parameter Store
+
+Similarly, create additional parameters for Docker credentials and registry details:
+<img width="940" height="447" alt="image" src="https://github.com/user-attachments/assets/c722eada-298c-4850-b1ce-b498afd7d3be" />
+
+
+```go
+Parameter name: /cicd/sonar/sonar-token
+Value: <sonar_token>
+
+Parameter name: /cicd/docker-credentials/username
+Value: <docker_username>
+
+Parameter name: /cicd/docker-credentials/password
+Value: <docker_password>
+
+Parameter name: /cicd/docker-registry/url
+Value: docker.io
+```
+
+
+
+
+
+
+
+
+
 
 
