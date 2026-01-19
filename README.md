@@ -305,6 +305,7 @@ Trivy image scan completed
 <img width="940" height="450" alt="image" src="https://github.com/user-attachments/assets/51e38a01-d7c2-4b8d-baff-2f96b1583e6f" />
 ### ECS Service Creation Using Cloud Shell
 we are creating ECS Service using cloud shell because in AWS UI don't have any option to edit deployment controler from ECS to CodeDeploy.
+
 ```go
 aws ecs create-service \
   --cluster Swiggy_Cluster \
@@ -316,7 +317,6 @@ aws ecs create-service \
   --load-balancers \
     targetGroupArn=arn:aws:elasticloadbalancing:us-east-1:404438824207:targetgroup/swiggy-blue-tg/1813a3c76df5425f,containerName=Swiggy,containerPort=80 \
   --network-configuration "awsvpcConfiguration={subnets=[subnet-09dfa7196d755daf9,subnet-07ea0039a663d27a8,subnet-0c1fee551f3421c57],securityGroups=[sg-09296e9dd89916dad],assignPublicIp=DISABLED}"
-
 ```
 <img width="940" height="448" alt="image" src="https://github.com/user-attachments/assets/49feab9e-3872-429b-b8aa-6d64314530a0" />
 <img width="940" height="448" alt="image" src="https://github.com/user-attachments/assets/0eb322e0-a6ac-486e-8fab-e380b2d44cf6" />
