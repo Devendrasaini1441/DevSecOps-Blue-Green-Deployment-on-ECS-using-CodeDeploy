@@ -440,7 +440,9 @@ aws ecs create-service \
   --network-configuration "awsvpcConfiguration={subnets=[subnet-09dfa7196d755daf9,subnet-07ea0039a663d27a8,subnet-0c1fee551f3421c57],securityGroups=[sg-09296e9dd89916dad],assignPublicIp=DISABLED}"
 ```
 <img width="940" height="448" alt="image" src="https://github.com/user-attachments/assets/49feab9e-3872-429b-b8aa-6d64314530a0" />
+Next you can verify that in swiggy-service all task are in runing state.
 <img width="940" height="448" alt="image" src="https://github.com/user-attachments/assets/0eb322e0-a6ac-486e-8fab-e380b2d44cf6" />
+Now You can access you application through your Application Load Balancer DNS Url.
 <img width="940" height="456" alt="image" src="https://github.com/user-attachments/assets/a0bcadba-3b17-4e82-8c46-aa578fd56d00" />
 
 <img width="940" height="445" alt="image" src="https://github.com/user-attachments/assets/effc5c4d-ac9a-4c82-a6f2-01ca3488ce11" />
