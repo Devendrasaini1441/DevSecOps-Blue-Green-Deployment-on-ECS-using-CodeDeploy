@@ -316,11 +316,12 @@ In the Monitoring section, enable Container Insights to get detailed metrics for
 
 Review the configuration and click Create cluster.
 <img width="940" height="448" alt="image" src="https://github.com/user-attachments/assets/46d81e40-0e97-4869-b9f2-26257d378d9a" />
-#### Create an ECS Task Definition
+### Create an ECS Task Definition
 After creating the cluster, the next step is to define how the container should run using a task definition.
 In the ECS console, go to Task Definitions.
-Click on Create new task definition.
+
 <img width="940" height="446" alt="image" src="https://github.com/user-attachments/assets/d27ec344-5796-4acd-819a-0a4a32a9ec21" />
+Click on Create new task definition.
 Provide a Task Definition name.
 Under Infrastructure requirements, select Amazon EC2 instances as the launch type.
 
@@ -337,6 +338,7 @@ Specify the Container port (for example: 80)
 In the Monitoring section, keep the recommended settings enabled.
 
 Review the configuration and click Create task definition.
+
 <img width="940" height="445" alt="image" src="https://github.com/user-attachments/assets/a84e3687-feae-4244-970c-5776dd4c3f97" />
 Review the configuration and click Create task definition.
 <img width="940" height="449" alt="image" src="https://github.com/user-attachments/assets/39ba75a7-da4b-43e7-8237-cd1b27267f0a" />
